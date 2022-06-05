@@ -11,19 +11,15 @@
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
     <script src="leaflet-heat.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tweakpane@3.0.8/dist/tweakpane.min.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/tweakpane@3.0.8/dist/tweakpane.min.js"></script>-->
+    <script src="https://cdn.skypack.dev/tweakpane"></script>
 
-    <style>
-        body, html, #map {
-            height: 100%;
-            padding: 0;
-            margin: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="map.css">
 </head>
 
 <body>
     <div id="map"></div>
+    <div id="TP" class="w-80"></div>
 
     <!-- Include Leaflet.heat from CDN -->
     <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
@@ -34,6 +30,45 @@
     <script type="text/javascript" src="markerAddition.js"></script>
     <script type="text/javascript" src="borders.js"></script>
     <script type="text/javascript" src="markerSeparation.js"></script>
+<!--    <script type="text/javascript" src="dashboard.js"></script>-->
+
+    <script>
+        // import Tweakpane from CDN
+
+        // const myPane = Tweakpane.createPane('myPane', {
+        //     position: 'right',
+        //     width: '50%',
+        //     height: '100%',
+        //     expanded: true,
+        //     collapsible: true,
+        //     resizable: true,
+        //     closable: true,
+        //     title: 'Tweakpane'
+        // });
+
+
+
+        // generate a new Tweakpane called myPane
+        const myPane = Tweakpane.Pane({
+            position: 'right',
+            width: '50%',
+            height: '100%',
+            expanded: true,
+            collapsible: true,
+            resizable: true,
+            closable: true,
+            title: 'Tweakpane'
+        });
+        // Parameter object
+        const PARAMS = {rotationRate: 0.5,anotherParam: 'test'};
+        // Pass the object and its key to pane
+        myPane.add(PARAMS, 'rotationRate');
+        // myPane.addInput(PARAMS, 'rotationRate');
+        // Second Param
+        myPane.add(PARAMS, 'anotherParam');
+        // myPane.addInput(PARAMS, 'anotherParam');
+
+    </script>
 
     <script>
 

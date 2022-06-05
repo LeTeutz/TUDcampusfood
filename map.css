@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700');
+
+body, html, #map {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Translucent pane */
+:root {
+    --tp-base-background-color: #2f313740;
+}
+.tp-rotv,
+.tp-clpv {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
